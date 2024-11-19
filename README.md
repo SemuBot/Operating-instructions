@@ -9,7 +9,7 @@
 - Turn on the battery, and the Raspberry Pi should start automatically
 - Turn on the remote controller
 - Release the Stop button, and the wheelbase should be ready to move
-- Use the "deadman" switch on the top right corner (L1) and Joysticks to control the robot
+- Use the "deadman" switch on the top left corner (LB) and Joysticks to control the robot
 
 #### Turn on the robot itself
 - Connect the "onboard computer (intel NUC)" with the battery or power supply.
