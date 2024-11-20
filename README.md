@@ -19,7 +19,7 @@
 #### Connect to the robot with an SSH
 - Make sure that the Robot and the computer are at the same network "semubot"
 - The password of the router is written on the Router
-- Login data: semubot@192.168.200.181
+- Login data: semubot@192.168.0.90
 
 #### Play the audio file
 - First of all, you should be connected through SSH to the Semubot onboard computer
