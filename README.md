@@ -32,7 +32,17 @@
 
 ```
 speak "This is an example sentence, that the robot will speak"
-
 ```
 - After you have pressed enter, some black magic happens and the robot will start speaking
 - **NB!!!** The quotation marks("") are important!
+
+#### Setting volume
+- Must have SSH connection so Semubot onboard computer
+- Use following command:
+
+```
+volume 50
+```
+- This sets the output volume to 50%. 
+- Valid ranges are 0-100 (10 is quite quiet already)
+
