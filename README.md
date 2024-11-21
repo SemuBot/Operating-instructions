@@ -25,3 +25,14 @@
 - First of all, you should be connected through SSH to the Semubot onboard computer
 - Then you should unplug and re-plug the USB-C dock just to be sure that the default audio device is correct (by default, the latest connected audio device will be used as a default)
 - On the command line of a semubot type in: "playfile"
+
+#### Playing custom text
+- For this, you also have to be connected through SSH to the Semubot onboard computer
+- In the command line, write the following command: 
+
+```
+speak "This is an example sentence, that the robot will speak"
+
+```
+- After you have pressed enter, some black magic happens and the robot will start speaking
+- **NB!!!** The quotation marks("") are important!
