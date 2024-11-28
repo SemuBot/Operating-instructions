@@ -38,7 +38,7 @@ speak "This is an example sentence, that the robot will speak"
 
 #### Setting volume
 - Must have SSH connection so Semubot onboard computer
-- Use following command:
+- Use the following command:
 
 ```
 volume 50
@@ -46,3 +46,12 @@ volume 50
 - This sets the output volume to 50%. 
 - Valid ranges are 0-100 (10 is quite quiet already)
 
+#### Playing previously generated audio file
+
+- If you have generated a audio file with "speak" command
+- Then you can use this command to play that audio file again basically instantly
+- Use the following command:
+
+```
+previous
+````
