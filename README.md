@@ -24,8 +24,17 @@
 
 #### Play the audio file
 - First of all, you should be connected through SSH to the Semubot onboard computer
-- Then you should unplug and re-plug the USB-C dock just to be sure that the default audio device is correct (by default, the latest connected audio device will be used as a default)
-- On the command line of a semubot type in: "sayhi"
+<del>- Then you should unplug and re-plug the USB-C dock just to be sure that the default audio device is correct (by default, the latest connected audio device will be used as a default) </del> **Should be fixed, but if audio is not working, try this**
+- On the command line of a semubot type in:
+
+```
+sayhi
+```
+- This runs the long version.
+- Another alternative is to create a .txt file, write your text into it and run command stated below. Replace textfile.txt with your own file.
+```
+playfile <textfile.txt>
+```
 
 #### Playing custom text
 - For this, you also have to be connected through SSH to the Semubot onboard computer
