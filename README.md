@@ -43,6 +43,14 @@ playfile <textfile.txt>
 ```
 speak "This is an example sentence, that the robot will speak"
 ```
+
+- Speak command can be used for other things, use following command for more info.
+
+```
+speak -h
+````
+
+
 - After you have pressed enter, some black magic happens and the robot will start speaking
 - **NB!!!** The quotation marks("") are important!
 
@@ -64,4 +72,10 @@ volume 50
 
 ```
 previous
+````
+
+ OR
+
+ ```
+speak -a
 ````
