@@ -26,7 +26,7 @@
 
 ### Big PC
 
-* ip: **192.168.0.172
+* ip: **192.168.0.172**
 * username: semubot
 * password: semubot
 
