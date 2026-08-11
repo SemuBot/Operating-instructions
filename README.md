@@ -1,4 +1,35 @@
 # Operating-instructions
+
+## IP addresses
+
+### SemuBot V1
+
+#### NUC
+
+* ip: **192.168.0.90**
+* username: semubot
+* password: semubot
+
+#### RPI
+
+* ip: **192.168.0.82**
+* username: semubot
+* password: semubot
+
+### SemuBot V2
+
+#### RPI
+
+* ip: **192.168.0.202**
+* username: semubot
+* password semubot
+
+### Big PC
+
+* ip: **192.168.0.172
+* username: semubot
+* password: semubot
+
 ## Here will be an instruction manual on how to operate a Semubot
 
 ### Charging the battery
