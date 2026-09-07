@@ -1,112 +1,96 @@
-# Operating-instructions
+# SemuBot Operating Instructions
 
-## IP addresses
+## Network / IP Addresses
 
-### SemuBot V1
+| Device | IP | Username | Password |
+|---|---|---|---|
+| SemuBot V1 — NUC | 192.168.0.90 | semubot | semubot |
+| SemuBot V1 — RPi | 192.168.0.82 | semubot | semubot |
+| SemuBot V2 — RPi | 192.168.0.202 | semubot | semubot |
+| Big PC | 192.168.0.172 | semubot | semubot |
 
-#### NUC
+---
 
-* ip: **192.168.0.90**
-* username: semubot
-* password: semubot
+## 1. Powering On
 
-#### RPI
+### Wheelbase / driving battery
+* To charge the battery, connect the big blue charger to the 2 pin black and red wire coming out of the robot's body.
 
-* ip: **192.168.0.82**
-* username: semubot
-* password: semubot
+### V1
+1. Flip the **red switch** inside the robot's body.
+2. The NUC and Raspberry Pi turn on automatically.
+3. If all cables are connected correctly, the robot's face should appear on screen.
 
-### SemuBot V2
 
-#### RPI
+### V2
+*(power-on instructions TBD)*
 
-* ip: **192.168.0.202**
-* username: semubot
-* password semubot
+---
 
-### Big PC
+## 2. Driving the SemuBot
+*(same procedure for V1 and V2)*
 
-* ip: **192.168.0.172**
-* username: semubot
-* password: semubot
+1. Turn on the Xbox controller — **white** for V1, **pink** for V2.
+2. Release the **red Stop button** on the robot.
+3. Hold the **deadman switch** and use the joysticks to control the robot.
 
-## Here will be an instruction manual on how to operate a Semubot
+---
 
-### Charging the battery
-#### Wheelbase battery
-#### Battery for the NUC
+## 3. Connecting via SSH
 
-#### Driving with the Semubot
-- Turn on the battery, and the Raspberry Pi should start automatically
-- Turn on the remote controller
-- Release the Stop button, and the wheelbase should be ready to move
-- Use the "deadman" switch on the top left corner (LB) and Joysticks to control the robot
+1. Make sure the robot and your computer are on the same network: **"semubot"**.
+   - The router's Wi-Fi password is **75883478**.
+2. Connect:
+   ```
+   ssh semubot@192.168.0.90
+   ```
+   - If using the SemuBot laptop, you can instead just run:
+     ```
+     ssh nuc
+     ```
 
-#### Turn on the robot itself
-- Connect the "onboard computer (intel NUC)" with the battery or power supply.
-- Turn on the computer.
-- If all the cables are connected correctly, then the face of the robot should be displayed
+---
 
-#### Connect to the robot with an SSH
-- Make sure that the Robot and the computer are at the same network "semubot"
-- The password of the router is written on the Router
-- Login data: semubot@192.168.0.90
-- If using Semubot laptop, can also use "ssh nuc"
+## 4. Audio Commands
+> All commands below require an active SSH connection to the SemuBot onboard computer.
 
-#### Play the audio file
-- First of all, you should be connected through SSH to the Semubot onboard computer
-- <del>- Then you should unplug and re-plug the USB-C dock just to be sure that the default audio device is correct (by default, the latest connected audio device will be used as a default) </del> **Should be fixed, but if audio is not working, try this**
-- On the command line of a semubot type in:
-
+### Play the built-in greeting
 ```
 sayhi
 ```
-- This runs the long version.
-- Another alternative is to create a .txt file, write your text into it and run command stated below. Replace textfile.txt with your own file.
+Runs the long/default greeting.
+
+> **Known issue (should be fixed):** if audio doesn't play, try unplugging and re-plugging the USB-C dock — by default, the most recently connected audio device becomes the system default.
+
+### Play a custom text file
 ```
 playfile <textfile.txt>
 ```
+Write your text into a `.txt` file and pass it in (replace `textfile.txt` with your filename).
 
-#### Playing custom text
-- For this, you also have to be connected through SSH to the Semubot onboard computer
-- In the command line, write the following command: 
-
+### Speak custom text directly
 ```
 speak "This is an example sentence, that the robot will speak"
 ```
+- **Quotation marks are required.**
+- For more options:
+  ```
+  speak -h
+  ```
 
-- Speak command can be used for other things, use following command for more info.
-
-```
-speak -h
-````
-
-
-- After you have pressed enter, some black magic happens and the robot will start speaking
-- **NB!!!** The quotation marks("") are important!
-
-#### Setting volume
-- Must have SSH connection so Semubot onboard computer
-- Use the following command:
-
+### Set volume
 ```
 volume 50
 ```
-- This sets the output volume to 50%. 
-- Valid ranges are 0-100 (10 is quite quiet already)
+- Sets output volume to 50%.
+- Valid range: **0–100** (10 is already quite quiet).
 
-#### Playing previously generated audio file
-
-- If you have generated a audio file with "speak" command
-- Then you can use this command to play that audio file again basically instantly
-- Use the following command:
-
+### Replay the last generated audio
+Instantly replays the most recent `speak`-generated audio:
 ```
 previous
-````
-
- OR
-
- ```
+```
+or
+```
 speak -a
-````
+```
