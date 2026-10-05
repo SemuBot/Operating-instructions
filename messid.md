@@ -73,8 +73,7 @@ volume 50
 
 #### Rääkima panemine
 
-* Rääkima saab panna kolme viisi.
-* Esimene käsuga 
+* Vaikimisi tervituse saab käivitada käsuga
 
 ```
 sayhi
@@ -90,7 +89,13 @@ speak "Tere! Mina olen Semubot"
 * Kus siis jutumärkide vahele saab panna oma teksti
 ![speak](images/speak.png)
 
-* Seejärel ta natukene mõtleb ja lõpuks räägib
+* Käsk saadab teksti NUC-is töötavale kõnesünteesiteenusele aadressil `http://localhost:8001/v2`, kasutades häält `mari` ja kiirust `1`, ning mängib saadud WAV-faili ette. Teenus peab töötama; päringu ajalimiit on 300 sekundit.
+* Käivita sünteesikäsud ükshaaval, sest need kasutavad samu viimase teksti ja heli väljundfaile.
+* Tekstifaili sisu saab sama teenusega ette lugeda nii:
+
+```bash
+speak "$(cat tekst.txt)"
+```
 
 * Sama käsuga saab rääkima panna ka eelmist "speak" käsu tulemust
 * Seda saab käsuga:
@@ -99,5 +104,34 @@ speak "Tere! Mina olen Semubot"
 speak -a
 ```
 
+* Sama teeb `speak --audio`. See mängib viimase sünteesitud heli ette ilma uue sünteesita ega vaja töötavat kõnesünteesiteenust.
+
 ![speak previous](images/previous.png)
 
+#### Nimega heliklippide salvestamine ja esitamine
+
+* Teksti sünteesimiseks, nimega salvestamiseks ja ettemängimiseks kasuta:
+
+```bash
+speak "Tere! Mina olen Semubot" --save hello
+```
+
+* Salvestatud nimede ja algtekstide vaatamiseks:
+
+```bash
+speak --list
+```
+
+* Salvestatud klipi esitamiseks ilma uue sünteesita:
+
+```bash
+speak -p hello
+# Sama käsk pikemal kujul:
+speak --play hello
+```
+
+* Salvestatud klipi esitamine ei vaja kõnesünteesiteenust ega muuda heli, mida esitab `speak -a`.
+* Klipid asuvad NUC-is kaustas `~/.local/share/speak/clips/NIMI/`: `audio.wav` ja algteksti ning loomisaega sisaldav `metadata.json`.
+* Nimi peab algama ASCII tähe või numbriga ning sisaldama 1–64 ASCII tähte, numbrit, alakriipsu või sidekriipsu. Suur- ja väiketähti eristatakse. Olemasolevat nime üle ei kirjutata; uue teksti jaoks vali uus nimi.
+* Puuduva klipi korral kontrolli nimesid käsuga `speak --list`. Kõigi valikute abi näeb käsuga `speak -h` või `speak --help`.
+* Sünteesivea korral kontrolli, et teenus töötaks NUC-i pordil `8001`. HTTP-vea, ajalimiidi ületamise või WAV-päiseta vastuse korral jääb eelmine helifail alles ja heli ei mängita ette.
