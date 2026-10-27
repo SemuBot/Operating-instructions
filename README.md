@@ -122,3 +122,18 @@ speak -a
 `speak --audio` is equivalent to `speak -a`. These replay the latest generated audio, while `speak -p NAME` plays a permanently saved clip. Neither regenerates speech or requires the speech service. Playing a named clip does not change which audio `speak -a` replays.
 
 If synthesis fails, check that the speech service is running on the NUC at port `8001`. HTTP errors, timeouts, and responses without a WAV header leave the previous `output.wav` intact and skip playback.
+
+---
+
+## 5. Webapp (touch control)
+
+The SemuBot webapp runs on the **NUC**. You can use it from a phone or tablet to drive the robot and send chat messages.
+
+1. Connect your device to the **"semubot"** Wi-Fi network.
+2. Open in a browser:
+   ```
+   http://192.168.0.90:8000
+   ```
+3. Use the joystick to drive, the rotate buttons to turn, and the chat button to make the robot speak predefined messages. The header shows the ROS connection status and battery level.
+
+> The webapp works only on touch-capable devices. On a desktop browser the controls don't load.
