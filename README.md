@@ -134,6 +134,7 @@ The SemuBot webapp runs on the **NUC**. You can use it from a phone or tablet to
    ```
    http://192.168.0.90:8000
    ```
+   - Or scan the QR code on the chest display instead of typing the address: tap the chest image's **top-left corner twice, then the bottom-right corner three times**, enter the admin PIN, and tap **QR-kood** (**QR code** in English). The QR code always uses the robot's current IP, so it still works if the address above has changed.
 3. Use the joystick to drive, the rotate buttons to turn, and the chat button to make the robot speak predefined messages. The header shows the ROS connection status and battery level.
 
 > The webapp works only on touch-capable devices. On a desktop browser the controls don't load.

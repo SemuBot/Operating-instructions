@@ -135,3 +135,15 @@ speak --play hello
 * Nimi peab algama ASCII tähe või numbriga ning sisaldama 1–64 ASCII tähte, numbrit, alakriipsu või sidekriipsu. Suur- ja väiketähti eristatakse. Olemasolevat nime üle ei kirjutata; uue teksti jaoks vali uus nimi.
 * Puuduva klipi korral kontrolli nimesid käsuga `speak --list`. Kõigi valikute abi näeb käsuga `speak -h` või `speak --help`.
 * Sünteesivea korral kontrolli, et teenus töötaks NUC-i pordil `8001`. HTTP-vea, ajalimiidi ületamise või WAV-päiseta vastuse korral jääb eelmine helifail alles ja heli ei mängita ette.
+
+
+## Veebirakendus (puutega juhtimine)
+
+* Veebirakendusega saab telefonist või tahvlist robotit sõidutada ja rääkima panna.
+* Ühenda telefon Semuboti wifiga (parool **75883478**).
+* Ava brauseris `http://192.168.0.90:8000` **või skanni QR-kood** roboti rinnaekraanilt:
+  * Puuduta rinnaekraani **vasakut ülanurka kaks korda, siis paremat alanurka kolm korda**.
+  * Sisesta admini PIN.
+  * Vajuta **QR-kood** ja skanni see telefoni kaameraga.
+* QR-kood kasutab alati roboti hetke IP-aadressi, nii et see töötab ka siis, kui aadress on muutunud.
+* Veebirakendus töötab ainult puuteekraaniga seadmetes.
