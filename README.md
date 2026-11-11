@@ -2,12 +2,14 @@
 
 ## Network / IP Addresses
 
-| Device | IP | Username | Password |
-|---|---|---|---|
-| SemuBot V1 — NUC | 192.168.0.90 | semubot | semubot |
-| SemuBot V1 — RPi | 192.168.0.82 | semubot | semubot |
-| SemuBot V2 — RPi | 192.168.0.202 | semubot | semubot |
-| Big PC | 192.168.0.172 | semubot | semubot |
+| Device | IP | Username |
+|---|---|---|
+| SemuBot V1 — NUC | 192.168.0.90 | semubot |
+| SemuBot V1 — RPi | 192.168.0.82 | semubot |
+| SemuBot V2 — RPi | 192.168.0.202 | semubot |
+| Big PC | 192.168.0.172 | semubot |
+
+Passwords are not kept in this repository. Ask the maintainer.
 
 ---
 
@@ -39,7 +41,7 @@
 ## 3. Connecting via SSH
 
 1. Make sure the robot and your computer are on the same network: **"semubot"**.
-   - The router's Wi-Fi password is **75883478**.
+   - Ask the maintainer for the Wi-Fi password.
 2. Connect:
    ```
    ssh semubot@192.168.0.90
